@@ -10,7 +10,7 @@ describe('WebNotification', function () {
     });
 
     it('created element should match string representation', function () {
-        var expectedEl = '<full-screen target="#hello-world"></full-screen>';
+        var expectedEl = '<full-screen available="true" target="#hello-world"></full-screen>';
 
         var fullScreenWrapper = document.createElement('div');
         fullScreenWrapper.appendChild(fullScreenElement);

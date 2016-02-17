@@ -1,5 +1,4 @@
 (function () {
-
     expose('createFullScreen', register, factory);
 
     /**
@@ -38,8 +37,16 @@
         var fsProto = Object.create(HTMLElement.prototype);
 
         fsProto.createdCallback = function () {
+            // set the fsMethod
+            this.fsMethod = fullScreenMethod();
+
+            // set whether full screen is available or not
+            this.setAttribute('available', !!this.fsMethod);
+
+            // get the target for fullscreen
             var targetAttr = this.getAttribute('target');
 
+            // if a target is provided fullscreen that element or fullscreen the entire page
             if(targetAttr) {
                 this.target = document.querySelector(this.getAttribute('target'));
             } else {
@@ -53,19 +60,27 @@
             this.removeEventListener('click', launchIntoFullscreen);
         };
 
-        // check which fullscreen api should be called
-        function launchIntoFullscreen() {
-            var el = this.target;
+        // find which fullscreen method is available
+        function fullScreenMethod() {
+            var el = document.body;
+            var method;
 
             if(el.requestFullscreen) {
-                el.requestFullscreen();
+                method = 'requestFullscreen'
             } else if(el.mozRequestFullScreen) {
-                el.mozRequestFullScreen();
+                method = 'mozRequestFullScreen';
             } else if(el.webkitRequestFullscreen) {
-                el.webkitRequestFullscreen();
+                method = 'webkitRequestFullscreen';
             } else if(el.msRequestFullscreen) {
-                el.msRequestFullscreen();
+                method = 'msRequestFullscreen';
             }
+
+            return method
+        }
+
+        // launch into full screen
+        function launchIntoFullscreen() {
+            this.target[this.fsMethod]();
         }
 
         return document.registerElement('full-screen', {
@@ -92,5 +107,4 @@
 
         return newEl;
     }
-
 })();
