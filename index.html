@@ -7,14 +7,22 @@
     <script src="full-screen.js"></script>
 </head>
 <body>
-    <img class="hello-world" src="images/homer-simpson.jpg" />
+    <p style="width: 100%; margin-bottom: 50px;">
+        <img class="hello-world" src="images/homer-simpson.jpg" style="width: 200px; height: 300px; float: left; position: relative;"/>
 
-    <full-screen target=".hello-world">
-        <button>Full Screen Homer</button>
-    </full-screen>
+        <img class="hello-world" src="images/marge-simpson.png" style="width: 200px; height: 300px; float: left;"/>
 
-    <full-screen>
-        <button>Full Screen All</button>
-    </full-screen>
+        <br style="clear: both;" />
+    </p>
+
+    <p>
+        <full-screen target=".hello-world">
+            <button>Full Screen Homer</button>
+        </full-screen>
+
+        <full-screen>
+            <button>Full Screen All</button>
+        </full-screen>
+    </p>
 </body>
 </html>

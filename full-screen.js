@@ -53,9 +53,7 @@
             this.removeEventListener('click', launchIntoFullscreen);
         };
 
-        /**
-         * check which fullscreen api should be called
-         */
+        // check which fullscreen api should be called
         function launchIntoFullscreen() {
             var el = this.target;
 
