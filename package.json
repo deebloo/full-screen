@@ -1,0 +1,24 @@
+{
+    "name": "full-screen",
+    "version": "1.0.0",
+    "description": "Vanilla Web Component for interacting with the full screen API",
+    "repository": "https://github.com/deebloo/full-screen",
+    "main": "index.js",
+    "scripts": {
+        "test": "node node_modules/karma/bin/karma start"
+    },
+    "keywords": [
+        "Web Component",
+        "Custom Elements",
+        "Full Screen",
+        "HTML5"
+    ],
+    "author": "deebloo <dannybluedesign@gmail.com>",
+    "license": "MIT",
+    "devDependencies": {
+        "jasmine-core": "^2.4.1",
+        "karma": "^0.13.21",
+        "karma-chrome-launcher": "^0.2.2",
+        "karma-jasmine": "^0.3.7"
+    }
+}
