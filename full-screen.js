@@ -37,16 +37,11 @@
         var fsProto = Object.create(HTMLElement.prototype);
 
         fsProto.createdCallback = function () {
-            // set the fsMethod
             this.fsMethod = fullScreenMethod();
-
-            // set whether full screen is available or not
             this.setAttribute('available', !!this.fsMethod);
 
-            // get the target for fullscreen
             var targetAttr = this.getAttribute('target');
 
-            // if a target is provided fullscreen that element or fullscreen the entire page
             if(targetAttr) {
                 this.target = document.querySelector(this.getAttribute('target'));
             } else {
