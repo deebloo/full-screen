@@ -1,7 +1,7 @@
 # full-screen
 Vanilla Web Component for the HTML5 full screen API. [Demo](http://deebloo.github.io/full-screen/)
 
-##### Instalation
+##### Installation
 ```
 npm i --save full-screen
 
