@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "Vanilla Web Component for interacting with the full screen API",
     "repository": "https://github.com/deebloo/full-screen",
-    "main": "index.js",
+    "main": "full-screen.js",
     "scripts": {
         "test": "node node_modules/karma/bin/karma start"
     },
